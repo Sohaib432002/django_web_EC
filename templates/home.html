@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home_page|social_website</title>
+    <style>
+        .btn{
+            display: flex;
+            justify-content: center;
+            margin-top: 23px;
+        }
+    </style>
+</head>
+<body>
+    {%csrf_token%}
+    <h1>Its a home page</h1>
+    <div class="btn_1">
+        <button><a href="{% url 'LogoutPage' %}" style="text-decoration: none;color: aliceblue;">Logout Here</a></button>
+
+    </div>
+</body>
+</html>

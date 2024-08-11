@@ -1,0 +1,24 @@
+{% extends 'basic.html' %}
+{% block title%} Reset Password {%endblock%}
+
+{% block content %}
+<h2>Reset Password</h2>
+<form action="{% url 'LoginPage_newpassword' uidb64=uidb64 token=token %}" method="post" >{% csrf_token %}
+
+  <div class="mb-3">
+    <label for="exampleInputPassword1" class="form-label">Password</label>
+    <input type="password" class="form-control" name="new_password" placeholder="Enter Password" id="exampleInputPassword1">
+  </div>
+  <div class="mb-3">
+    <label for="exampleInputPassword1" class="form-label">Conform Password</label>
+    <input type="password" class="form-control" name="c_password" placeholder="Enter Conform Password" id="exampleInputPassword1">
+  </div>
+
+  <button type="submit" class="btn btn-primary">Submit</button><br>
+  {% for message in messages %}
+  <span style="color: red;font-size: 14px;">{{message}}</span>
+  {% endfor %}
+  <span style="color: red;font-size: 14px;">{{error}}</span>
+</form>
+
+{% endblock %}
